@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
-import {axiosGeneral} from "./globals";
+import {axiosGeneral} from "../config/globals";
 import moment from "moment";
 import "moment/locale/id";
 

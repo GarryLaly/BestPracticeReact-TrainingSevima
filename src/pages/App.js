@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from './Button';
-import Button2 from './Button2';
+import logo from '../assets/img/logo.svg';
+import '../assets/css/App.css';
+import Button from '../components/Button';
+import Button2 from '../components/Button2';
 
 class App extends React.Component {
   constructor(props) {

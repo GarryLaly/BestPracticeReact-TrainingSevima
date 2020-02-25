@@ -35,7 +35,7 @@ const List = ({
 }) => {
   const [news] = useState([
     {
-      title: "Judul Artikel",
+      title: "Judul Artikel Statis",
       date: "24 Jam 2020",
     },
     {

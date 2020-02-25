@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import News from './News';
-import * as serviceWorker from './serviceWorker';
+import './assets/css/index.css';
+import Routes from './config/Routes';
+import * as serviceWorker from './config/serviceWorker';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'http://learn.hackatown.online/';
 
-ReactDOM.render(<News />, document.getElementById('root'));
+ReactDOM.render(<Routes />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
