@@ -9,20 +9,16 @@ import { useTranslation, I18nextProvider } from "react-i18next";
 import News from '../pages/News';
 import language from '../config/language';
 import List from '../pages/List';
+import {changeLanguage, getLanguage} from '../config/helpers';
 
 const Routes = () => {
   const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(localStorage.getItem("currentLanguage") || "id");
   // const [isLoggedin, setIsLoggedin] = useState(false);
 
   const loginAction = () => {
     // setIsLoggedin(true);
     localStorage.setItem('isLoggedin', true);
-  }
-
-  const changeLanguage = () => {
-    const newLanguage = i18n.language === "en" ? "id" : "en";
-    i18n.changeLanguage(newLanguage);
-    localStorage.setItem('currentLanguage', newLanguage);
   }
 
   return (
@@ -32,13 +28,13 @@ const Routes = () => {
           {/* Navigasi */}
           <ul>
             <li>
-              <button onClick={() => changeLanguage()}>{t('change_language')}</button>
+              <button onClick={() => changeLanguage(currentLanguage, setCurrentLanguage)}>{getLanguage(currentLanguage, "change_language")}</button>
             </li>
             <li>
-              <a href="/">{t("news")}</a>
+              <a href="/">{getLanguage(currentLanguage, "news")}</a>
             </li>
             <li>
-              <a href="/list">{t("list")}</a>
+              <a href="/list">{getLanguage(currentLanguage, "list")}</a>
             </li>
           </ul>
           <hr />
