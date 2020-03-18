@@ -19,6 +19,12 @@ const Routes = () => {
     localStorage.setItem('isLoggedin', true);
   }
 
+  const changeLanguage = () => {
+    const newLanguage = i18n.language === "en" ? "id" : "en";
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem('currentLanguage', newLanguage);
+  }
+
   return (
     <I18nextProvider i18n={language}>
       <Router>
@@ -26,7 +32,7 @@ const Routes = () => {
           {/* Navigasi */}
           <ul>
             <li>
-              <button onClick={() => i18n.changeLanguage(i18n.language === "en" ? "id" : "en")}>Ganti Bahasa</button>
+              <button onClick={() => changeLanguage()}>{t('change_language')}</button>
             </li>
             <li>
               <a href="/">{t("news")}</a>

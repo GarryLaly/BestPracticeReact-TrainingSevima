@@ -6,18 +6,20 @@ i18n.use(initReactI18next).init({
   resources: {
     id: {
       translations: {
+        change_language: 'Ganti Bahasa',
         news: "Berita",
         list: "Daftar",
       }
     },
     en: {
       translations: {
+        change_language: 'Change Language',
         news: "News",
         list: "List",
       }
     },
   },
-  fallbackLng: "id",
+  fallbackLng: localStorage.getItem("currentLanguage") || "id",
   debug: true,
 
   // have a common namespace used around the full app
